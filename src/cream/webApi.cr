@@ -11,11 +11,11 @@ module Cream
 
     module ICSGOTournaments
     extend self
-        def gettournamentfantasylineup(event : UInt32, steamid : UInt64, steamidkey : String, )
+        def gettournamentfantasylineup(event : UInt32, steamid : UInt64, steamidkey : String)
             HTTP::Client.get("https://api.steampowered.com/ICSGOTournaments_730/GetTournamentFantasyLineup/v0001?event=#{event}&steamid=#{steamid}&steamidkey=#{steamidkey}&format=json&key=#{apikey}").body
         end
 
-        def gettournamentitems(event : UInt32, steamid : UInt64, steamidkey : String, )
+        def gettournamentitems(event : UInt32, steamid : UInt64, steamidkey : String)
             HTTP::Client.get("https://api.steampowered.com/ICSGOTournaments_730/GetTournamentItems/v0001?event=#{event}&steamid=#{steamid}&steamidkey=#{steamidkey}&format=json&key=#{apikey}").body
         end
 
@@ -23,15 +23,15 @@ module Cream
             HTTP::Client.get("https://api.steampowered.com/ICSGOTournaments_730/GetTournamentLayout/v0001?event=#{event}&format=json&key=#{apikey}").body
         end
 
-        def gettournamentpredictions(event : UInt32, steamid : UInt64, steamidkey : String, )
+        def gettournamentpredictions(event : UInt32, steamid : UInt64, steamidkey : String)
             HTTP::Client.get("https://api.steampowered.com/ICSGOTournaments_730/GetTournamentPredictions/v0001?event=#{event}&steamid=#{steamid}&steamidkey=#{steamidkey}&format=json&key=#{apikey}").body
         end
 
-        def uploadtournamentfantasylineup(event : UInt32, steamid : UInt64, steamidkey : String, sectionid : UInt32, pickid0 : UInt32, itemid0 : UInt64, pickid1 : UInt32, itemid1 : UInt64, pickid2 : UInt32, itemid2 : UInt64, pickid3 : UInt32, itemid3 : UInt64, pickid4 : UInt32, itemid4 : UInt64, )
+        def uploadtournamentfantasylineup(event : UInt32, steamid : UInt64, steamidkey : String, sectionid : UInt32, pickid0 : UInt32, itemid0 : UInt64, pickid1 : UInt32, itemid1 : UInt64, pickid2 : UInt32, itemid2 : UInt64, pickid3 : UInt32, itemid3 : UInt64, pickid4 : UInt32, itemid4 : UInt64)
             HTTP::Client.post("https://api.steampowered.com/ICSGOTournaments_730/UploadTournamentFantasyLineup/v0001?event=#{event}&steamid=#{steamid}&steamidkey=#{steamidkey}&sectionid=#{sectionid}&pickid0=#{pickid0}&itemid0=#{itemid0}&pickid1=#{pickid1}&itemid1=#{itemid1}&pickid2=#{pickid2}&itemid2=#{itemid2}&pickid3=#{pickid3}&itemid3=#{itemid3}&pickid4=#{pickid4}&itemid4=#{itemid4}&format=json&key=#{apikey}").body
         end
 
-        def uploadtournamentpredictions(event : UInt32, steamid : UInt64, steamidkey : String, sectionid : UInt32, groupid : UInt32, index : UInt32, pickid : UInt32, itemid : UInt64, )
+        def uploadtournamentpredictions(event : UInt32, steamid : UInt64, steamidkey : String, sectionid : UInt32, groupid : UInt32, index : UInt32, pickid : UInt32, itemid : UInt64)
             HTTP::Client.post("https://api.steampowered.com/ICSGOTournaments_730/UploadTournamentPredictions/v0001?event=#{event}&steamid=#{steamid}&steamidkey=#{steamidkey}&sectionid=#{sectionid}&groupid=#{groupid}&index=#{index}&pickid=#{pickid}&itemid=#{itemid}&format=json&key=#{apikey}").body
         end
 
@@ -363,11 +363,11 @@ module Cream
 
     module ISteamCDN
     extend self
-        def setclientfilters(key : String, cdnname : String, allowedipblocks : String, allowedasns : String, allowedipcountries : String, )
+        def setclientfilters(key : String, cdnname : String, allowedipblocks : String, allowedasns : String, allowedipcountries : String)
             HTTP::Client.post("https://api.steampowered.com/ISteamCDN/SetClientFilters/v0001?key=#{key}&cdnname=#{cdnname}&allowedipblocks=#{allowedipblocks}&allowedasns=#{allowedasns}&allowedipcountries=#{allowedipcountries}&format=json").body
         end
 
-        def setperformancestats(key : String, cdnname : String, mbps_sent : UInt32, mbps_recv : UInt32, cpu_percent : UInt32, cache_hit_percent : UInt32, )
+        def setperformancestats(key : String, cdnname : String, mbps_sent : UInt32, mbps_recv : UInt32, cpu_percent : UInt32, cache_hit_percent : UInt32)
             HTTP::Client.post("https://api.steampowered.com/ISteamCDN/SetPerformanceStats/v0001?key=#{key}&cdnname=#{cdnname}&mbps_sent=#{mbps_sent}&mbps_recv=#{mbps_recv}&cpu_percent=#{cpu_percent}&cache_hit_percent=#{cache_hit_percent}&format=json").body
         end
 
@@ -443,27 +443,27 @@ module Cream
 
     module ISteamUser
     extend self
-        def getfriendlist(key : String, steamid : UInt64, relationship : String, )
+        def getfriendlist(key : String, steamid : UInt64, relationship : String)
             HTTP::Client.get("https://api.steampowered.com/ISteamUser/GetFriendList/v0001?key=#{key}&steamid=#{steamid}&relationship=#{relationship}&format=json").body
         end
 
-        def getplayerbans(key : String, steamids : String, )
+        def getplayerbans(key : String, steamids : String)
             HTTP::Client.get("https://api.steampowered.com/ISteamUser/GetPlayerBans/v0001?key=#{key}&steamids=#{steamids}&format=json").body
         end
 
-        def getplayersummaries(key : String, steamids : String, )
+        def getplayersummaries(key : String, steamids : String)
             HTTP::Client.get("https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0001?key=#{key}&steamids=#{steamids}&format=json").body
         end
 
-        def getplayersummaries(key : String, steamids : String, )
+        def getplayersummaries(key : String, steamids : String)
             HTTP::Client.get("https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002?key=#{key}&steamids=#{steamids}&format=json").body
         end
 
-        def getusergrouplist(key : String, steamid : UInt64, )
+        def getusergrouplist(key : String, steamid : UInt64)
             HTTP::Client.get("https://api.steampowered.com/ISteamUser/GetUserGroupList/v0001?key=#{key}&steamid=#{steamid}&format=json").body
         end
 
-        def resolvevanityurl(key : String, vanityurl : String, url_type : Int32, )
+        def resolvevanityurl(key : String, vanityurl : String, url_type : Int32)
             HTTP::Client.get("https://api.steampowered.com/ISteamUser/ResolveVanityURL/v0001?key=#{key}&vanityurl=#{vanityurl}&url_type=#{url_type}&format=json").body
         end
 
@@ -475,7 +475,7 @@ module Cream
             HTTP::Client.post("https://api.steampowered.com/ISteamUserAuth/AuthenticateUser/v0001?steamid=#{steamid}&sessionkey=#{sessionkey}&encrypted_loginkey=#{encrypted_loginkey}&format=json&key=#{apikey}").body
         end
 
-        def authenticateuserticket(key : String, appid : UInt32, ticket : String, )
+        def authenticateuserticket(key : String, appid : UInt32, ticket : String)
             HTTP::Client.get("https://api.steampowered.com/ISteamUserAuth/AuthenticateUserTicket/v0001?key=#{key}&appid=#{appid}&ticket=#{ticket}&format=json").body
         end
 
@@ -507,23 +507,23 @@ module Cream
             HTTP::Client.get("https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v0001?appid=#{appid}&format=json&key=#{apikey}").body
         end
 
-        def getplayerachievements(key : String, steamid : UInt64, appid : UInt32, l : String, )
+        def getplayerachievements(key : String, steamid : UInt64, appid : UInt32, l : String)
             HTTP::Client.get("https://api.steampowered.com/ISteamUserStats/GetPlayerAchievements/v0001?key=#{key}&steamid=#{steamid}&appid=#{appid}&l=#{l}&format=json").body
         end
 
-        def getschemaforgame(key : String, appid : UInt32, l : String, )
+        def getschemaforgame(key : String, appid : UInt32, l : String)
             HTTP::Client.get("https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v0001?key=#{key}&appid=#{appid}&l=#{l}&format=json").body
         end
 
-        def getschemaforgame(key : String, appid : UInt32, l : String, )
+        def getschemaforgame(key : String, appid : UInt32, l : String)
             HTTP::Client.get("https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v0002?key=#{key}&appid=#{appid}&l=#{l}&format=json").body
         end
 
-        def getuserstatsforgame(key : String, steamid : UInt64, appid : UInt32, )
+        def getuserstatsforgame(key : String, steamid : UInt64, appid : UInt32)
             HTTP::Client.get("https://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0001?key=#{key}&steamid=#{steamid}&appid=#{appid}&format=json").body
         end
 
-        def getuserstatsforgame(key : String, steamid : UInt64, appid : UInt32, )
+        def getuserstatsforgame(key : String, steamid : UInt64, appid : UInt32)
             HTTP::Client.get("https://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002?key=#{key}&steamid=#{steamid}&appid=#{appid}&format=json").body
         end
 
@@ -535,7 +535,7 @@ module Cream
             HTTP::Client.get("https://api.steampowered.com/ISteamWebAPIUtil/GetServerInfo/v0001?format=json&key=#{apikey}").body
         end
 
-        def getsupportedapilist(key : String, )
+        def getsupportedapilist(key : String)
             HTTP::Client.get("https://api.steampowered.com/ISteamWebAPIUtil/GetSupportedAPIList/v0001?key=#{key}&format=json").body
         end
 
@@ -615,39 +615,39 @@ module Cream
 
     module IGameServersService
     extend self
-        def getaccountlist(key : String, )
+        def getaccountlist(key : String)
             HTTP::Client.get("https://api.steampowered.com/IGameServersService/GetAccountList/v0001?key=#{key}&format=json").body
         end
 
-        def createaccount(key : String, appid : UInt32, memo : String, )
+        def createaccount(key : String, appid : UInt32, memo : String)
             HTTP::Client.post("https://api.steampowered.com/IGameServersService/CreateAccount/v0001?key=#{key}&appid=#{appid}&memo=#{memo}&format=json").body
         end
 
-        def setmemo(key : String, steamid : UInt64, memo : String, )
+        def setmemo(key : String, steamid : UInt64, memo : String)
             HTTP::Client.post("https://api.steampowered.com/IGameServersService/SetMemo/v0001?key=#{key}&steamid=#{steamid}&memo=#{memo}&format=json").body
         end
 
-        def resetlogintoken(key : String, steamid : UInt64, )
+        def resetlogintoken(key : String, steamid : UInt64)
             HTTP::Client.post("https://api.steampowered.com/IGameServersService/ResetLoginToken/v0001?key=#{key}&steamid=#{steamid}&format=json").body
         end
 
-        def deleteaccount(key : String, steamid : UInt64, )
+        def deleteaccount(key : String, steamid : UInt64)
             HTTP::Client.post("https://api.steampowered.com/IGameServersService/DeleteAccount/v0001?key=#{key}&steamid=#{steamid}&format=json").body
         end
 
-        def getaccountpublicinfo(key : String, steamid : UInt64, )
+        def getaccountpublicinfo(key : String, steamid : UInt64)
             HTTP::Client.get("https://api.steampowered.com/IGameServersService/GetAccountPublicInfo/v0001?key=#{key}&steamid=#{steamid}&format=json").body
         end
 
-        def querylogintoken(key : String, login_token : String, )
+        def querylogintoken(key : String, login_token : String)
             HTTP::Client.get("https://api.steampowered.com/IGameServersService/QueryLoginToken/v0001?key=#{key}&login_token=#{login_token}&format=json").body
         end
 
-        def getserversteamidsbyip(key : String, server_ips : String, )
+        def getserversteamidsbyip(key : String, server_ips : String)
             HTTP::Client.get("https://api.steampowered.com/IGameServersService/GetServerSteamIDsByIP/v0001?key=#{key}&server_ips=#{server_ips}&format=json").body
         end
 
-        def getserveripsbysteamid(key : String, server_steamids : UInt64, )
+        def getserveripsbysteamid(key : String, server_steamids : UInt64)
             HTTP::Client.get("https://api.steampowered.com/IGameServersService/GetServerIPsBySteamID/v0001?key=#{key}&server_steamids=#{server_steamids}&format=json").body
         end
 
@@ -655,7 +655,7 @@ module Cream
 
     module IPublishedFileService
     extend self
-        def queryfiles(key : String, query_type : UInt32, page : UInt32, numperpage : UInt32, creator_appid : UInt32, appid : UInt32, requiredtags : String, excludedtags : String, required_flags : String, omitted_flags : String, search_text : String, filetype : UInt32, child_publishedfileid : UInt64, days : UInt32, cache_max_age_seconds : UInt32, language : Int32, )
+        def queryfiles(key : String, query_type : UInt32, page : UInt32, numperpage : UInt32, creator_appid : UInt32, appid : UInt32, requiredtags : String, excludedtags : String, required_flags : String, omitted_flags : String, search_text : String, filetype : UInt32, child_publishedfileid : UInt64, days : UInt32, cache_max_age_seconds : UInt32, language : Int32)
             HTTP::Client.get("https://api.steampowered.com/IPublishedFileService/QueryFiles/v0001?key=#{key}&query_type=#{query_type}&page=#{page}&numperpage=#{numperpage}&creator_appid=#{creator_appid}&appid=#{appid}&requiredtags=#{requiredtags}&excludedtags=#{excludedtags}&match_all_tags=#{match_all_tags}&required_flags=#{required_flags}&omitted_flags=#{omitted_flags}&search_text=#{search_text}&filetype=#{filetype}&child_publishedfileid=#{child_publishedfileid}&days=#{days}&include_recent_votes_only=#{include_recent_votes_only}&cache_max_age_seconds=#{cache_max_age_seconds}&language=#{language}&required_kv_tags=#{required_kv_tags}&totalonly=#{totalonly}&ids_only=#{ids_only}&return_vote_data=#{return_vote_data}&return_tags=#{return_tags}&return_kv_tags=#{return_kv_tags}&return_previews=#{return_previews}&return_children=#{return_children}&return_short_description=#{return_short_description}&return_for_sale_data=#{return_for_sale_data}&return_metadata=#{return_metadata}&format=json").body
         end
 
@@ -667,27 +667,27 @@ module Cream
             HTTP::Client.post("https://api.steampowered.com/IPlayerService/RecordOfflinePlaytime/v0001?steamid=#{steamid}&ticket=#{ticket}&play_sessions=#{play_sessions}&format=json&key=#{apikey}").body
         end
 
-        def getrecentlyplayedgames(key : String, steamid : UInt64, count : UInt32, )
+        def getrecentlyplayedgames(key : String, steamid : UInt64, count : UInt32)
             HTTP::Client.get("https://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v0001?key=#{key}&steamid=#{steamid}&count=#{count}&format=json").body
         end
 
-        def getownedgames(key : String, steamid : UInt64, appids_filter : UInt32, )
+        def getownedgames(key : String, steamid : UInt64, appids_filter : UInt32)
             HTTP::Client.get("https://api.steampowered.com/IPlayerService/GetOwnedGames/v0001?key=#{key}&steamid=#{steamid}&include_appinfo=#{include_appinfo}&include_played_free_games=#{include_played_free_games}&appids_filter=#{appids_filter}&format=json").body
         end
 
-        def getsteamlevel(key : String, steamid : UInt64, )
+        def getsteamlevel(key : String, steamid : UInt64)
             HTTP::Client.get("https://api.steampowered.com/IPlayerService/GetSteamLevel/v0001?key=#{key}&steamid=#{steamid}&format=json").body
         end
 
-        def getbadges(key : String, steamid : UInt64, )
+        def getbadges(key : String, steamid : UInt64)
             HTTP::Client.get("https://api.steampowered.com/IPlayerService/GetBadges/v0001?key=#{key}&steamid=#{steamid}&format=json").body
         end
 
-        def getcommunitybadgeprogress(key : String, steamid : UInt64, badgeid : Int32, )
+        def getcommunitybadgeprogress(key : String, steamid : UInt64, badgeid : Int32)
             HTTP::Client.get("https://api.steampowered.com/IPlayerService/GetCommunityBadgeProgress/v0001?key=#{key}&steamid=#{steamid}&badgeid=#{badgeid}&format=json").body
         end
 
-        def isplayingsharedgame(key : String, steamid : UInt64, appid_playing : UInt32, )
+        def isplayingsharedgame(key : String, steamid : UInt64, appid_playing : UInt32)
             HTTP::Client.get("https://api.steampowered.com/IPlayerService/IsPlayingSharedGame/v0001?key=#{key}&steamid=#{steamid}&appid_playing=#{appid_playing}&format=json").body
         end
 
@@ -695,7 +695,7 @@ module Cream
 
     module IInventoryService
     extend self
-        def getpricesheet(key : String, ecurrency : Int32, )
+        def getpricesheet(key : String, ecurrency : Int32)
             HTTP::Client.get("https://api.steampowered.com/IInventoryService/GetPriceSheet/v0001?key=#{key}&ecurrency=#{ecurrency}&format=json").body
         end
 
@@ -703,27 +703,27 @@ module Cream
 
     module IEconService
     extend self
-        def gettradehistory(key : String, max_trades : UInt32, start_after_time : UInt32, start_after_tradeid : UInt64, language : String, )
+        def gettradehistory(key : String, max_trades : UInt32, start_after_time : UInt32, start_after_tradeid : UInt64, language : String)
             HTTP::Client.get("https://api.steampowered.com/IEconService/GetTradeHistory/v0001?key=#{key}&max_trades=#{max_trades}&start_after_time=#{start_after_time}&start_after_tradeid=#{start_after_tradeid}&navigating_back=#{navigating_back}&get_descriptions=#{get_descriptions}&language=#{language}&include_failed=#{include_failed}&include_total=#{include_total}&format=json").body
         end
 
-        def gettradeoffers(key : String, language : String, time_historical_cutoff : UInt32, )
+        def gettradeoffers(key : String, language : String, time_historical_cutoff : UInt32)
             HTTP::Client.get("https://api.steampowered.com/IEconService/GetTradeOffers/v0001?key=#{key}&get_sent_offers=#{get_sent_offers}&get_received_offers=#{get_received_offers}&get_descriptions=#{get_descriptions}&language=#{language}&active_only=#{active_only}&historical_only=#{historical_only}&time_historical_cutoff=#{time_historical_cutoff}&format=json").body
         end
 
-        def gettradeoffer(key : String, tradeofferid : UInt64, language : String, )
+        def gettradeoffer(key : String, tradeofferid : UInt64, language : String)
             HTTP::Client.get("https://api.steampowered.com/IEconService/GetTradeOffer/v0001?key=#{key}&tradeofferid=#{tradeofferid}&language=#{language}&format=json").body
         end
 
-        def gettradeofferssummary(key : String, time_last_visit : UInt32, )
+        def gettradeofferssummary(key : String, time_last_visit : UInt32)
             HTTP::Client.get("https://api.steampowered.com/IEconService/GetTradeOffersSummary/v0001?key=#{key}&time_last_visit=#{time_last_visit}&format=json").body
         end
 
-        def declinetradeoffer(key : String, tradeofferid : UInt64, )
+        def declinetradeoffer(key : String, tradeofferid : UInt64)
             HTTP::Client.post("https://api.steampowered.com/IEconService/DeclineTradeOffer/v0001?key=#{key}&tradeofferid=#{tradeofferid}&format=json").body
         end
 
-        def canceltradeoffer(key : String, tradeofferid : UInt64, )
+        def canceltradeoffer(key : String, tradeofferid : UInt64)
             HTTP::Client.post("https://api.steampowered.com/IEconService/CancelTradeOffer/v0001?key=#{key}&tradeofferid=#{tradeofferid}&format=json").body
         end
 
@@ -731,7 +731,7 @@ module Cream
 
     module ICheatReportingService
     extend self
-        def reportcheatdata(key : String, steamid : UInt64, appid : UInt32, pathandfilename : String, webcheaturl : String, time_now : UInt64, time_started : UInt64, time_stopped : UInt64, cheatname : String, game_process_id : UInt32, cheat_process_id : UInt32, cheat_param_1 : UInt64, cheat_param_2 : UInt64, )
+        def reportcheatdata(key : String, steamid : UInt64, appid : UInt32, pathandfilename : String, webcheaturl : String, time_now : UInt64, time_started : UInt64, time_stopped : UInt64, cheatname : String, game_process_id : UInt32, cheat_process_id : UInt32, cheat_param_1 : UInt64, cheat_param_2 : UInt64)
             HTTP::Client.post("https://api.steampowered.com/ICheatReportingService/ReportCheatData/v0001?key=#{key}&steamid=#{steamid}&appid=#{appid}&pathandfilename=#{pathandfilename}&webcheaturl=#{webcheaturl}&time_now=#{time_now}&time_started=#{time_started}&time_stopped=#{time_stopped}&cheatname=#{cheatname}&game_process_id=#{game_process_id}&cheat_process_id=#{cheat_process_id}&cheat_param_1=#{cheat_param_1}&cheat_param_2=#{cheat_param_2}&format=json").body
         end
 
