@@ -1,6 +1,6 @@
 # cream
 
-Cr(ystal St)eam
+**Cr**(ystal St)**eam**
 
 ## Installation
 
