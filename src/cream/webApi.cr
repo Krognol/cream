@@ -1,7 +1,7 @@
 require "http"
 
 module Cream
-    module ICSGOServers_730
+    module ICSGOServers
     extend self
         def getgameserversstatus(apikey : String)
             HTTP::Client.get("https://api.steampowered.com/ICSGOServers_730/GetGameServersStatus/v0001?format=json&key=#{apikey}").body
@@ -9,7 +9,7 @@ module Cream
 
     end
 
-    module ICSGOTournaments_730
+    module ICSGOTournaments
     extend self
         def gettournamentfantasylineup(event : UInt32, steamid : UInt64, steamidkey : String, )
             HTTP::Client.get("https://api.steampowered.com/ICSGOTournaments_730/GetTournamentFantasyLineup/v0001?event=#{event}&steamid=#{steamid}&steamidkey=#{steamidkey}&format=json&key=#{apikey}").body
@@ -37,7 +37,7 @@ module Cream
 
     end
 
-    module IDOTA2Fantasy_570
+    module IDOTA2Fantasy
     extend self
         def getfantasyplayerstats(fantasyLeagueID : UInt32, startTime : UInt32, endTime : UInt32, matchid : UInt64, seriesID : UInt32, playerAccountID : UInt32, apikey : String)
             HTTP::Client.get("https://api.steampowered.com/IDOTA2Fantasy_570/GetFantasyPlayerStats/v0001?FantasyLeagueID=#{fantasyLeagueID}&StartTime=#{startTime}&EndTime=#{endTime}&matchid=#{matchid}&SeriesID=#{seriesID}&PlayerAccountID=#{playerAccountID}&format=json&key=#{apikey}").body
@@ -53,7 +53,7 @@ module Cream
 
     end
 
-    module IDOTA2MatchStats_570
+    module IDOTA2MatchStats
     extend self
         def getrealtimestats(server_steam_id : UInt64, apikey : String)
             HTTP::Client.get("https://api.steampowered.com/IDOTA2MatchStats_570/GetRealtimeStats/v0001?server_steam_id=#{server_steam_id}&format=json&key=#{apikey}").body
@@ -61,7 +61,7 @@ module Cream
 
     end
 
-    module IDOTA2Match_570
+    module IDOTA2Match
     extend self
         def getleaguelisting(apikey : String)
             HTTP::Client.get("https://api.steampowered.com/IDOTA2Match_570/GetLeagueListing/v0001?format=json&key=#{apikey}").body
@@ -105,7 +105,7 @@ module Cream
 
     end
 
-    module IDOTA2StreamSystem_570
+    module IDOTA2StreamSystem
     extend self
         def getbroadcasterinfo(broadcaster_steam_id : UInt64, league_id : UInt32, apikey : String)
             HTTP::Client.get("https://api.steampowered.com/IDOTA2StreamSystem_570/GetBroadcasterInfo/v0001?broadcaster_steam_id=#{broadcaster_steam_id}&league_id=#{league_id}&format=json&key=#{apikey}").body
@@ -113,7 +113,7 @@ module Cream
 
     end
 
-    module IDOTA2Teams_570
+    module IDOTA2Teams
     extend self
         def getteaminfo(team_id : UInt32, league_id : UInt32, apikey : String)
             HTTP::Client.get("https://api.steampowered.com/IDOTA2Teams_570/GetTeamInfo/v0001?team_id=#{team_id}&league_id=#{league_id}&format=json&key=#{apikey}").body
@@ -121,7 +121,7 @@ module Cream
 
     end
 
-    module IDOTA2Ticket_570
+    module IDOTA2Ticket
     extend self
         def claimbadgereward(eventid : UInt32, badgeID : String, apikey : String)
             HTTP::Client.get("https://api.steampowered.com/IDOTA2Ticket_570/ClaimBadgeReward/v0001?eventid=#{eventid}&BadgeID=#{badgeID}&format=json&key=#{apikey}").body
@@ -141,7 +141,7 @@ module Cream
 
     end
 
-    module IEconDOTA2_570
+    module IEconDOTA2
     extend self
         def geteventstatsforaccount(eventid : UInt32, accountid : UInt32, language : String, apikey : String)
             HTTP::Client.get("https://api.steampowered.com/IEconDOTA2_570/GetEventStatsForAccount/v0001?eventid=#{eventid}&accountid=#{accountid}&language=#{language}&format=json&key=#{apikey}").body
@@ -169,7 +169,7 @@ module Cream
 
     end
 
-    module IEconItems_218620
+    module IEconItems
     extend self
         def getplayeritems(steamid : UInt64, apikey : String)
             HTTP::Client.get("https://api.steampowered.com/IEconItems_218620/GetPlayerItems/v0001?steamid=#{steamid}&format=json&key=#{apikey}").body
@@ -177,7 +177,7 @@ module Cream
 
     end
 
-    module IEconItems_221540
+    module IEconItems
     extend self
         def getplayeritems(steamid : UInt64, apikey : String)
             HTTP::Client.get("https://api.steampowered.com/IEconItems_221540/GetPlayerItems/v0001?steamid=#{steamid}&format=json&key=#{apikey}").body
@@ -185,7 +185,7 @@ module Cream
 
     end
 
-    module IEconItems_238460
+    module IEconItems
     extend self
         def getplayeritems(steamid : UInt64, apikey : String)
             HTTP::Client.get("https://api.steampowered.com/IEconItems_238460/GetPlayerItems/v0001?steamid=#{steamid}&format=json&key=#{apikey}").body
@@ -193,7 +193,7 @@ module Cream
 
     end
 
-    module IEconItems_440
+    module IEconItems
     extend self
         def getplayeritems(steamid : UInt64, apikey : String)
             HTTP::Client.get("https://api.steampowered.com/IEconItems_440/GetPlayerItems/v0001?steamid=#{steamid}&format=json&key=#{apikey}").body
@@ -217,7 +217,7 @@ module Cream
 
     end
 
-    module IEconItems_570
+    module IEconItems
     extend self
         def getequippedplayeritems(steamid : UInt64, class_id : UInt32, apikey : String)
             HTTP::Client.get("https://api.steampowered.com/IEconItems_570/GetEquippedPlayerItems/v0001?steamid=#{steamid}&class_id=#{class_id}&format=json&key=#{apikey}").body
@@ -241,7 +241,7 @@ module Cream
 
     end
 
-    module IEconItems_620
+    module IEconItems
     extend self
         def getplayeritems(steamid : UInt64, apikey : String)
             HTTP::Client.get("https://api.steampowered.com/IEconItems_620/GetPlayerItems/v0001?steamid=#{steamid}&format=json&key=#{apikey}").body
@@ -253,7 +253,7 @@ module Cream
 
     end
 
-    module IEconItems_730
+    module IEconItems
     extend self
         def getplayeritems(steamid : UInt64, apikey : String)
             HTTP::Client.get("https://api.steampowered.com/IEconItems_730/GetPlayerItems/v0001?steamid=#{steamid}&format=json&key=#{apikey}").body
@@ -273,7 +273,7 @@ module Cream
 
     end
 
-    module IEconItems_841
+    module IEconItems
     extend self
         def getplayeritems(steamid : UInt64, apikey : String)
             HTTP::Client.get("https://api.steampowered.com/IEconItems_841/GetPlayerItems/v0001?steamid=#{steamid}&format=json&key=#{apikey}").body
@@ -285,7 +285,7 @@ module Cream
 
     end
 
-    module IGCVersion_440
+    module IGCVersion
     extend self
         def getclientversion(apikey : String)
             HTTP::Client.get("https://api.steampowered.com/IGCVersion_440/GetClientVersion/v0001?format=json&key=#{apikey}").body
@@ -297,7 +297,7 @@ module Cream
 
     end
 
-    module IGCVersion_570
+    module IGCVersion
     extend self
         def getclientversion(apikey : String)
             HTTP::Client.get("https://api.steampowered.com/IGCVersion_570/GetClientVersion/v0001?format=json&key=#{apikey}").body
@@ -309,7 +309,7 @@ module Cream
 
     end
 
-    module IGCVersion_730
+    module IGCVersion
     extend self
         def getserverversion(apikey : String)
             HTTP::Client.get("https://api.steampowered.com/IGCVersion_730/GetServerVersion/v0001?format=json&key=#{apikey}").body
@@ -317,7 +317,7 @@ module Cream
 
     end
 
-    module IPortal2Leaderboards_620
+    module IPortal2Leaderboards
     extend self
         def getbucketizeddata(leaderboardName : String, apikey : String)
             HTTP::Client.get("https://api.steampowered.com/IPortal2Leaderboards_620/GetBucketizedData/v0001?leaderboardName=#{leaderboardName}&format=json&key=#{apikey}").body
@@ -325,7 +325,7 @@ module Cream
 
     end
 
-    module IPortal2Leaderboards_841
+    module IPortal2Leaderboards
     extend self
         def getbucketizeddata(leaderboardName : String, apikey : String)
             HTTP::Client.get("https://api.steampowered.com/IPortal2Leaderboards_841/GetBucketizedData/v0001?leaderboardName=#{leaderboardName}&format=json&key=#{apikey}").body
@@ -549,7 +549,7 @@ module Cream
 
     end
 
-    module ITFItems_440
+    module ITFItems
     extend self
         def getgoldenwrenches(apikey : String)
             HTTP::Client.get("https://api.steampowered.com/ITFItems_440/GetGoldenWrenches/v0002?format=json&key=#{apikey}").body
@@ -557,7 +557,7 @@ module Cream
 
     end
 
-    module ITFPromos_440
+    module ITFPromos
     extend self
         def getitemid(steamid : UInt64, promoid : UInt32, apikey : String)
             HTTP::Client.get("https://api.steampowered.com/ITFPromos_440/GetItemID/v0001?steamid=#{steamid}&promoid=#{promoid}&format=json&key=#{apikey}").body
@@ -569,7 +569,7 @@ module Cream
 
     end
 
-    module ITFPromos_570
+    module ITFPromos
     extend self
         def getitemid(steamid : UInt64, promoid : UInt32, apikey : String)
             HTTP::Client.get("https://api.steampowered.com/ITFPromos_570/GetItemID/v0001?steamid=#{steamid}&promoid=#{promoid}&format=json&key=#{apikey}").body
@@ -581,7 +581,7 @@ module Cream
 
     end
 
-    module ITFPromos_620
+    module ITFPromos
     extend self
         def getitemid(steamid : UInt64, promoID : UInt32, apikey : String)
             HTTP::Client.get("https://api.steampowered.com/ITFPromos_620/GetItemID/v0001?steamid=#{steamid}&PromoID=#{promoID}&format=json&key=#{apikey}").body
@@ -593,7 +593,7 @@ module Cream
 
     end
 
-    module ITFPromos_841
+    module ITFPromos
     extend self
         def getitemid(steamid : UInt64, promoID : UInt32, apikey : String)
             HTTP::Client.get("https://api.steampowered.com/ITFPromos_841/GetItemID/v0001?steamid=#{steamid}&PromoID=#{promoID}&format=json&key=#{apikey}").body
@@ -605,7 +605,7 @@ module Cream
 
     end
 
-    module ITFSystem_440
+    module ITFSystem
     extend self
         def getworldstatus(apikey : String)
             HTTP::Client.get("https://api.steampowered.com/ITFSystem_440/GetWorldStatus/v0001?format=json&key=#{apikey}").body
