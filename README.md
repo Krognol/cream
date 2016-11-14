@@ -16,7 +16,6 @@ dependencies:
 
 ## Usage
 
-
 ```crystal
 require "cream"
 
@@ -25,7 +24,7 @@ require "cream"
 # unmarshal the json body into objects.
 
 # Resolving a vanity url
-puts Cream::ISteamUser.resolvevanityurl("your steam api key here", "Krognol", 1) # 1 is the default, documentation to come
+puts Cream::ISteamUser.resolvevanityurl("your steam api key here", "Krognol", 1)
 
 # Output : 
 # {
@@ -36,6 +35,8 @@ puts Cream::ISteamUser.resolvevanityurl("your steam api key here", "Krognol", 1)
 # }
 
 ```
+
+Read the documentation [here](https://krognol.gitbooks.io/cream/content/)
 
 ## Development
 
