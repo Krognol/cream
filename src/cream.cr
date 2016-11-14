@@ -2,28 +2,28 @@ require "./cream/*"
 
 
 module Cream
-	include ICSGOServers_730
-	include ICSGOTournaments_730
-	include IDOTA2Fantasy_570
-	include IDOTA2MatchStats_570
-	include IDOTA2Match_570
-	include IDOTA2StreamSystem_570
-	include IDOTA2Teams_570
-	include IDOTA2Ticket_570
-	include IEconDOTA2_570
-	include IEconItems_218620
-	include IEconItems_221540
-	include IEconItems_238460
-	include IEconItems_440
-	include IEconItems_570
-	include IEconItems_620
-	include IEconItems_730
-	include IEconItems_841
-	include IGCVersion_440
-	include IGCVersion_570
-	include IGCVersion_730
-	include IPortal2Leaderboards_620
-	include IPortal2Leaderboards_841
+	include ICSGOServers
+	include ICSGOTournaments
+	include IDOTA2Fantasy
+	include IDOTA2MatchStats
+	include IDOTA2Match
+	include IDOTA2StreamSystem
+	include IDOTA2Teams
+	include IDOTA2Ticket
+	include IEconDOTA2
+	include IEconItems
+	include IEconItems
+	include IEconItems
+	include IEconItems
+	include IEconItems
+	include IEconItems
+	include IEconItems
+	include IEconItems
+	include IGCVersion
+	include IGCVersion
+	include IGCVersion
+	include IPortal2Leaderboards
+	include IPortal2Leaderboards
 	include ISteamApps
 	include ISteamBitPay
 	include ISteamCDN
@@ -39,12 +39,12 @@ module Cream
 	include ISteamUserStats
 	include ISteamWebAPIUtil
 	include ISteamWebUserPresenceOAuth
-	include ITFItems_440
-	include ITFPromos_440
-	include ITFPromos_570
-	include ITFPromos_620
-	include ITFPromos_841
-	include ITFSystem_440
+	include ITFItems
+	include ITFPromos
+	include ITFPromos
+	include ITFPromos
+	include ITFPromos
+	include ITFSystem
 	include IGameServersService
 	include IPublishedFileService
 	include IPlayerService
